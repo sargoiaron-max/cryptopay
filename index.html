@@ -4,19 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CryptoPay Services offers secure and instant cryptocurrency payment solutions for online businesses worldwide.">
-    <meta name="cryptomus" content="05dcc5b" />
+    <meta name="cryptomus" content="e05dcc5b" />
     <title>CryptoPay Services - Secure Crypto Payment Solutions</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💰</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
     <style>
-        /* ========== Global Styles ========== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f5f5f5;
@@ -24,358 +16,225 @@
             line-height: 1.6;
         }
 
-        /* ========== Navigation Bar ========== */
-        nav {
+        /* ===== Navigation Bar ===== */
+        header {
             position: fixed;
-            top: 0;
+            top: 0; left: 0;
             width: 100%;
             background: linear-gradient(135deg, #0072ff, #00c6ff);
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
         }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2.5rem;
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
         }
 
-        nav ul li a {
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger span {
+            background: white;
+            height: 3px;
+            width: 25px;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
             color: #fff;
             text-decoration: none;
+            transition: 0.3s;
             font-weight: 400;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
         }
 
-        nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
+        nav a:hover { opacity: 0.8; }
+
+        /* ===== Sidebar Menu ===== */
+        .sidebar {
+            position: fixed;
+            top: 0; left: -250px;
+            width: 250px;
+            height: 100%;
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            color: white;
+            transition: 0.4s ease;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            padding: 80px 20px;
         }
 
-        /* ========== Hero Section ========== */
+        .sidebar.active { left: 0; }
+
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            padding: 15px 0;
+            width: 100%;
+            display: block;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .sidebar a:hover {
+            background-color: rgba(255,255,255,0.1);
+            padding-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            nav { display: none; }
+        }
+
+        /* ===== Hero Section ===== */
         .hero {
             background: linear-gradient(135deg, #0072ff, #00c6ff);
             color: #fff;
             padding: 150px 20px 100px;
             text-align: center;
-            margin-top: 60px;
-            animation: fadeIn 1s ease-in;
+            margin-top: 70px;
         }
 
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            animation: slideDown 0.8s ease-out;
-        }
+        .hero h2 { font-size: 2.5rem; font-weight: 600; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
 
-        .hero p {
-            font-size: 1.3rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            animation: slideUp 0.8s ease-out;
-        }
-
-        /* ========== Buttons ========== */
         .btn {
             display: inline-block;
-            padding: 14px 35px;
+            padding: 12px 30px;
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: #fff;
-            text-decoration: none;
             border-radius: 6px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            transition: 0.3s;
+            margin: 5px;
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(135deg, #764ba2, #667eea);
-        }
+        .btn:hover { background: linear-gradient(135deg, #764ba2, #667eea); }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #f093fb, #f5576c);
-            margin: 10px;
-        }
-
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #f5576c, #f093fb);
-        }
-
-        /* ========== Benefits Section ========== */
+        /* ===== Benefits ===== */
         .benefits {
             padding: 80px 20px;
             max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .benefits h2 {
+            margin: auto;
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #0072ff;
-            animation: fadeIn 1s ease-in;
         }
+        .benefits h3 { font-size: 2rem; color: #0072ff; margin-bottom: 40px; }
 
-        .benefits-grid {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
         }
 
-        .benefit-card {
-            background: #fff;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: all 0.3s ease;
-            animation: slideUp 0.6s ease-out;
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
         }
+        .card:hover { transform: translateY(-8px); }
 
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-        }
+        .card h4 { color: #333; margin-bottom: 10px; }
+        .card p { color: #666; }
 
-        .benefit-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #0072ff, #00c6ff);
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: #fff;
-            animation: spin 2s linear infinite;
-        }
-
-        @keyframes spin {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(180deg); }
-        }
-
-        .benefit-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .benefit-card p {
-            font-size: 1rem;
-            color: #666;
-            line-height: 1.8;
-        }
-
-        /* ========== CTA Section ========== */
-        .cta-section {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* ========== Footer ========== */
+        /* ===== Footer ===== */
         footer {
             background: #0d0d0d;
             color: #bbb;
-            padding: 3rem 20px 1.5rem;
             text-align: center;
+            padding: 40px 20px;
         }
 
-        .footer-links {
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links a {
+        footer a {
             color: #bbb;
+            margin: 0 10px;
             text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s ease;
+            transition: 0.3s;
         }
-
-        .footer-links a:hover {
-            color: #00c6ff;
-        }
-
-        footer p {
-            font-size: 0.9rem;
-            color: #888;
-        }
-
-        /* ========== Loading Spinner ========== */
-        .spinner {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top-color: #fff;
-            border-radius: 50%;
-            animation: spinLoader 0.8s linear infinite;
-        }
-
-        @keyframes spinLoader {
-            to { transform: rotate(360deg); }
-        }
-
-        /* ========== Animations ========== */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ========== Responsive Design ========== */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .benefits h2,
-            .cta-section h2 {
-                font-size: 2rem;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        footer a:hover { color: #00c6ff; }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+
+    <header>
+        <h1>CryptoPay</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Empowering Businesses with Secure Crypto Payments</h1>
-        <p>Accept Bitcoin, USDT, and other major cryptocurrencies with one simple API</p>
+        <h2>Empowering Businesses with Secure Crypto Payments</h2>
+        <p>Accept Bitcoin, USDT, and other major cryptocurrencies with one simple API.</p>
         <a href="services.html" class="btn">Get Started</a>
-        <a href="https://cryptomus.com/pay/YOUR_PAYMENT_LINK" class="btn btn-primary">Pay with Crypto</a>
+        <a href="https://cryptomus.com/pay/YOUR_PAYMENT_LINK" class="btn">Pay with Crypto</a>
     </section>
 
-    <!-- Benefits Section -->
+    <!-- Benefits -->
     <section class="benefits">
-        <h2>Why Choose CryptoPay Services?</h2>
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <div class="spinner"></div>
-                </div>
-                <h3>Fast Transactions</h3>
-                <p>Process cryptocurrency payments in seconds with our optimized blockchain infrastructure and real-time confirmation system.</p>
+        <h3>Why Choose CryptoPay Services?</h3>
+        <div class="grid">
+            <div class="card">
+                <h4>Fast Transactions</h4>
+                <p>Process payments instantly with real-time confirmations.</p>
             </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <div class="spinner"></div>
-                </div>
-                <h3>Global Reach</h3>
-                <p>Accept payments from customers worldwide without borders, exchange rates, or international banking fees.</p>
+            <div class="card">
+                <h4>Global Reach</h4>
+                <p>Accept crypto payments from anywhere in the world seamlessly.</p>
             </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <div class="spinner"></div>
-                </div>
-                <h3>Secure API</h3>
-                <p>Enterprise-grade security with end-to-end encryption, multi-signature wallets, and compliance with global standards.</p>
+            <div class="card">
+                <h4>Secure API</h4>
+                <p>Encrypted, reliable, and developer-friendly integration.</p>
             </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <div class="spinner"></div>
-                </div>
-                <h3>24/7 Support</h3>
-                <p>Our dedicated support team is available around the clock to assist you with any questions or technical issues.</p>
+            <div class="card">
+                <h4>24/7 Support</h4>
+                <p>Round-the-clock help from our experienced crypto team.</p>
             </div>
         </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="cta-section">
-        <h2>Ready to Transform Your Payment System?</h2>
-        <p>Join thousands of businesses already using CryptoPay Services to accept cryptocurrency payments seamlessly and securely.</p>
-        <a href="contact.html" class="btn">Contact Us Today</a>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-links">
-            <a href="#">Terms of Service</a>
-            <a href="#">Privacy Policy</a>
-        </div>
-        <p>&copy; 2025 CryptoPay Services - All Rights Reserved</p>
+        <p>&copy; 2025 CryptoPay Services — All Rights Reserved</p>
+        <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+    </script>
+
 </body>
-</html>
+                                     </html>
