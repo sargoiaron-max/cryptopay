@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CryptoPay Services offers secure and instant cryptocurrency payment solutions for online businesses worldwide.">
+    <meta name="cryptomus" content="2e448900" />
+    <title>Our Services - CryptoPay Services</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💰</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========== Global Styles ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ========== Navigation Bar ========== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* ========== Page Header ========== */
+        .page-header {
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            color: #fff;
+            padding: 120px 20px 60px;
+            text-align: center;
+            margin-top: 60px;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            font-weight: 300;
+        }
+
+        /* ========== Services Section ========== */
+        .services-content {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            left: 0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #fff;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            color: #0072ff;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #666;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00c6ff;
+            font-weight: bold;
+        }
+
+        /* ========== CTA Section ========== */
+        .cta-section {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            padding: 60px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 2rem;
+        }
+
+        /* ========== Buttons ========== */
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background: #fff;
+            color: #f5576c;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: #f5f5f5;
+        }
+
+        .btn-crypto {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+        }
+
+        .btn-crypto:hover {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+        }
+
+        /* ========== Loading Spinner ========== */
+        .spinner {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spinLoader 0.8s linear infinite;
+        }
+
+        @keyframes spinLoader {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ========== Footer ========== */
+        footer {
+            background: #0d0d0d;
+            color: #bbb;
+            padding: 3rem 20px 1.5rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #00c6ff;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* ========== Animations ========== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== Responsive Design ========== */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Our Services</h1>
+        <p>Comprehensive cryptocurrency payment solutions tailored to your business needs</p>
+    </section>
+
+    <!-- Services Content Section -->
+    <section class="services-content">
+        <div class="services-grid">
+            <!-- Service Card 1 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <div class="spinner"></div>
+                </div>
+                <h3>Crypto Payment Gateway</h3>
+                <p>Accept Bitcoin, Ethereum, USDT, and 50+ cryptocurrencies with our seamless payment gateway integration.</p>
+                <ul class="service-features">
+                    <li>Multiple cryptocurrency support</li>
+                    <li>Instant payment processing</li>
+                    <li>Automatic currency conversion</li>
+                    <li>Real-time transaction monitoring</li>
+                    <li>Low transaction fees</li>
+                </ul>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <div class="spinner"></div>
+                </div>
+                <h3>API Integration</h3>
+                <p>Powerful RESTful API designed for developers to integrate cryptocurrency payments into any platform.</p>
+                <ul class="service-features">
+                    <li>Comprehensive documentation</li>
+                    <li>Easy integration in minutes</li>
+                    <li>Webhook notifications</li>
+                    <li>SDKs for major languages</li>
+                    <li>Sandbox testing environment</li>
+                </ul>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <div class="spinner"></div>
+                </div>
+                <h3>Merchant Dashboard</h3>
+                <p>Comprehensive dashboard to manage all your cryptocurrency transactions and business analytics in one place.</p>
+                <ul class="service-features">
+                    <li>Real-time analytics</li>
+                    <li>Transaction history</li>
+                    <li>Revenue tracking</li>
+                    <li>Custom reporting</li>
+                    <li>Multi-user access control</li>
+                </ul>
+            </div>
+
+            <!-- Service Card 4 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <div class="spinner"></div>
+                </div>
+                <h3>Secure Wallet Tools</h3>
+                <p>Enterprise-grade cryptocurrency wallet management with multi-signature security and cold storage options.</p>
+                <ul class="service-features">
+                    <li>Multi-signature wallets</li>
+                    <li>Cold storage integration</li>
+                    <li>Automated withdrawals</li>
+                    <li>Address whitelisting</li>
+                    <li>Two-factor authentication</li>
+                </ul>
+            </div>
+
+            <!-- Service Card 5 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <div class="spinner"></div>
+                </div>
+                <h3>Compliance Solutions</h3>
+                <p>Stay compliant with global regulations through our built-in KYC, AML, and transaction monitoring tools.</p>
+                <ul class="service-features">
+                    <li>KYC verification</li>
+                    <li>AML screening</li>
+                    <li>Transaction monitoring</li>
+                    <li>Regulatory reporting</li>
+                    <li>Risk assessment tools</li>
+                </ul>
+            </div>
+
+            <!-- Service Card 6 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <div class="spinner"></div>
+                </div>
+                <h3>Payment Links</h3>
+                <p>Generate custom payment links and QR codes for easy cryptocurrency collection without any technical setup.</p>
+                <ul class="service-features">
+                    <li>Instant link generation</li>
+                    <li>Custom branding</li>
+                    <li>QR code support</li>
+                    <li>Email invoicing</li>
+                    <li>Payment tracking</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Call to Action Section -->
+        <div class="cta-section">
+            <h2>Start Accepting Crypto Payments Today</h2>
+            <p>Join thousands of businesses already benefiting from our secure and reliable cryptocurrency payment solutions.</p>
+            <a href="contact.html" class="btn">Get Started</a>
+            <a href="https://cryptomus.com/pay/YOUR_PAYMENT_LINK" class="btn btn-crypto">Pay with Crypto</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+        <p>&copy; 2025 CryptoPay Services - All Rights Reserved</p>
+    </footer>
+</body>
+</html>
