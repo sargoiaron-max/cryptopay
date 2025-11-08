@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CryptoPay Services offers secure and instant cryptocurrency payment solutions for online businesses worldwide.">
+    <meta name="cryptomus" content="2e448900" />
+    <title>About Us - CryptoPay Services</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💰</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========== Global Styles ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ========== Navigation Bar ========== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* ========== Page Header ========== */
+        .page-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            padding: 120px 20px 60px;
+            text-align: center;
+            margin-top: 60px;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        /* ========== About Content Section ========== */
+        .about-content {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-text {
+            animation: slideRight 0.8s ease-out;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            color: #0072ff;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 400px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 2rem;
+            animation: slideLeft 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        /* ========== Mission Vision Section ========== */
+        .mission-vision {
+            background: #fff;
+            padding: 4rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .mission-vision h3 {
+            font-size: 1.8rem;
+            color: #0072ff;
+            margin-bottom: 1rem;
+        }
+
+        .mission-vision p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        /* ========== Values Section ========== */
+        .values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .value-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .value-card h4 {
+            font-size: 1.5rem;
+            color: #0072ff;
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* ========== Button ========== */
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 2rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+        }
+
+        .back-home {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        /* ========== Footer ========== */
+        footer {
+            background: #0d0d0d;
+            color: #bbb;
+            padding: 3rem 20px 1.5rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #00c6ff;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* ========== Animations ========== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideRight {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* ========== Responsive Design ========== */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .mission-vision {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>About CryptoPay Services</h1>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="about-content">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>Our Story</h2>
+                <p>Founded in 2025, CryptoPay Services was born from a vision to bridge the gap between traditional commerce and the revolutionary world of cryptocurrency. We recognized that businesses worldwide needed a reliable, secure, and simple solution to accept digital payments.</p>
+                <p>Our team of blockchain experts, fintech veterans, and security specialists came together with one mission: to make cryptocurrency payments accessible to every business, regardless of size or technical expertise.</p>
+            </div>
+            <div class="about-image">
+                <span>Innovative Payment Solutions Since 2025</span>
+            </div>
+        </div>
+
+        <!-- Mission and Vision -->
+        <div class="mission-vision">
+            <h3>Our Mission</h3>
+            <p>To empower businesses globally with secure, fast, and borderless cryptocurrency payment solutions. We strive to eliminate the complexity of blockchain technology while maintaining the highest standards of security and compliance.</p>
+            
+            <h3>Our Vision</h3>
+            <p>We envision a world where cryptocurrency payments are as common and simple as traditional payment methods. A future where businesses of all sizes can seamlessly participate in the global digital economy without barriers.</p>
+            
+            <h3>Our Goals</h3>
+            <p>We aim to make cryptocurrency payments simple, secure, and borderless for merchants worldwide. By 2026, we plan to serve over 100,000 businesses across six continents, processing billions in cryptocurrency transactions while maintaining zero security breaches and providing unparalleled customer support.</p>
+        </div>
+
+        <!-- Values Section -->
+        <div class="values">
+            <div class="value-card">
+                <h4>Security First</h4>
+                <p>We prioritize the safety of your funds and data above all else, implementing military-grade encryption and multi-layer security protocols.</p>
+            </div>
+            <div class="value-card">
+                <h4>Innovation</h4>
+                <p>We continuously evolve our technology to stay ahead of the curve, embracing new blockchain innovations and payment methodologies.</p>
+            </div>
+            <div class="value-card">
+                <h4>Transparency</h4>
+                <p>We believe in open communication and honest business practices, providing clear pricing and real-time transaction visibility.</p>
+            </div>
+            <div class="value-card">
+                <h4>Customer Success</h4>
+                <p>Your success is our success. We provide dedicated support and resources to help your business thrive in the crypto economy.</p>
+            </div>
+        </div>
+
+        <!-- Back to Home Button -->
+        <div class="back-home">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+        <p>&copy; 2025 CryptoPay Services - All Rights Reserved</p>
+    </footer>
+</body>
+</html>
